@@ -14,13 +14,14 @@ local defaults = {
 
 ---@param opts? rp.Config
 function M.setup(opts)
+    ---@type rp.Config
     M.options = vim.tbl_extend("force", defaults, opts or {})
 
     local group = vim.api.nvim_create_augroup("redact_pass", { clear = true })
 
     vim.api.nvim_create_autocmd("VimEnter", {
         group = group,
-        pattern = defaults.patterns,
+        pattern = M.options.patterns,
         callback = function()
             -- Disable leaky options globally
             vim.opt.backup = false
