@@ -7,8 +7,13 @@ local defaults = {
         "/dev/shm/pass.?*/?*.txt",
         (vim.env.TMPDIR or "/tmp") .. "/pass.?*/?*.txt",
         "/tmp/pass.?*/?*.txt",
+        "/dev/shm/gopass-?*/?*",
+        (vim.env.TMPDIR or "/tmp") .. "/gopass-?*/?*",
+        "/tmp/gopass-?*/?*.txt",
         -- pattern for mac users
         "/private/var/?*/pass.?*/?*.txt",
+        "/private/var/?*/gopass-?*/?*",
+
     },
 }
 
